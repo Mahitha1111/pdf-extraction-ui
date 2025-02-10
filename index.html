@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Data Extraction Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📄 PDF Data Extraction Tool</h1>
+        <input type="file" id="pdfUpload" accept="application/pdf">
+        
+        <div class="form-group">
+            <label for="teamMember">👥 Team Member</label>
+            <select id="teamMember">
+                <option value="">Select a member</option>
+                <option value="Bharvad Bahadur">Bharvad Bahadur</option>
+                <option value="Chauhan Tejashkumar Revadas">Chauhan Tejashkumar Revadas</option>
+                <option value="Chetan Tadvi">Chetan Tadvi</option>
+                <option value="Dinbandhu Tadvi">Dinbandhu Tadvi</option>
+                <option value="Kanchan Vasava">Kanchan Vasava</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="formDate">📅 Form Date</label>
+            <input type="date" id="formDate">
+        </div>
+        <div class="form-group">
+            <label for="name">📝 Beneficiary Name</label>
+            <input type="text" id="name" placeholder="Enter name">
+        </div>
+        <div class="form-group">
+            <label for="dob">🎂 Date of Birth</label>
+            <input type="date" id="dob">
+        </div>
+        <div class="form-group">
+            <label for="gender">⚤ Gender</label>
+            <select id="gender">
+                <option value="">Select gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="area">📍 Area</label>
+            <input type="text" id="area" placeholder="Enter area">
+        </div>
+        <div class="form-group">
+            <label for="phone">📞 Phone Number</label>
+            <input type="tel" id="phone" placeholder="Enter phone number">
+        </div>
+        <button class="save-btn" onclick="saveData()">💾 Save Changes</button>
+        <div class="nav-buttons">
+            <button class="nav-btn" onclick="prevRecord()">⬅️ Back</button>
+            <button class="nav-btn" onclick="nextRecord()">➡️ Forward</button>
+        </div>
+    </div>
+    <script>
+        function saveData() {
+            alert("✅ Changes saved successfully!");
+        }
+        function prevRecord() {
+            alert("🔙 Going to the previous record...");
+        }
+        function nextRecord() {
+            alert("🔜 Going to the next record...");
+        }
+    </script>
+</body>
+</html>
