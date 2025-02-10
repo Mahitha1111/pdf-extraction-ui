@@ -4,69 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PDF Data Extraction Tool</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
-<body class="bg-gray-100 dark:bg-gray-900 transition-all duration-300">
-    <div class="min-h-screen flex items-center justify-center">
-        <div class="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 w-full max-w-lg">
-            <div class="flex justify-between items-center">
-                <h1 class="text-2xl font-bold text-gray-800 dark:text-white">📄 PDF Data Extraction</h1>
-                <button id="darkModeToggle" class="text-gray-500 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-100">
-                    🌙
-                </button>
-            </div>
-            
-            <input type="file" id="pdfUpload" accept="application/pdf" class="mt-4 w-full p-3 border rounded-lg bg-gray-100 dark:bg-gray-700 dark:text-white">
+<body>
+    <div class="container">
+        <h1>📄 PDF Data Extraction Tool</h1>
+        <input type="file" id="pdfUpload" accept="application/pdf">
 
-            <div class="mt-4 space-y-3">
-                <div>
-                    <label class="block text-gray-700 dark:text-gray-300 font-medium">👥 Team Member</label>
-                    <select id="teamMember" class="w-full p-3 border rounded-lg bg-gray-100 dark:bg-gray-700 dark:text-white">
-                        <option value="">Select a member</option>
-                        <option value="Bharvad Bahadur">Bharvad Bahadur</option>
-                        <option value="Chauhan Tejashkumar Revadas">Chauhan Tejashkumar Revadas</option>
-                        <option value="Chetan Tadvi">Chetan Tadvi</option>
-                        <option value="Dinbandhu Tadvi">Dinbandhu Tadvi</option>
-                        <option value="Kanchan Vasava">Kanchan Vasava</option>
-                    </select>
-                </div>
-                <div>
-                    <label class="block text-gray-700 dark:text-gray-300 font-medium">📅 Form Date</label>
-                    <input type="date" id="formDate" class="w-full p-3 border rounded-lg bg-gray-100 dark:bg-gray-700 dark:text-white">
-                </div>
-                <div>
-                    <label class="block text-gray-700 dark:text-gray-300 font-medium">📝 Beneficiary Name</label>
-                    <input type="text" id="name" placeholder="Enter name" class="w-full p-3 border rounded-lg bg-gray-100 dark:bg-gray-700 dark:text-white">
-                </div>
-                <div>
-                    <label class="block text-gray-700 dark:text-gray-300 font-medium">🎂 Date of Birth</label>
-                    <input type="date" id="dob" class="w-full p-3 border rounded-lg bg-gray-100 dark:bg-gray-700 dark:text-white">
-                </div>
-                <div>
-                    <label class="block text-gray-700 dark:text-gray-300 font-medium">⚤ Gender</label>
-                    <select id="gender" class="w-full p-3 border rounded-lg bg-gray-100 dark:bg-gray-700 dark:text-white">
-                        <option value="">Select gender</option>
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                        <option value="Other">Other</option>
-                    </select>
-                </div>
-                <div>
-                    <label class="block text-gray-700 dark:text-gray-300 font-medium">📍 Area</label>
-                    <input type="text" id="area" placeholder="Enter area" class="w-full p-3 border rounded-lg bg-gray-100 dark:bg-gray-700 dark:text-white">
-                </div>
-                <div>
-                    <label class="block text-gray-700 dark:text-gray-300 font-medium">📞 Phone Number</label>
-                    <input type="tel" id="phone" placeholder="Enter phone number" class="w-full p-3 border rounded-lg bg-gray-100 dark:bg-gray-700 dark:text-white">
-                </div>
-            </div>
+        <div class="form-group">
+            <label for="teamMember">👥 Team Member</label>
+            <select id="teamMember">
+                <option value="">Select a member</option>
+                <option value="Bharvad Bahadur">Bharvad Bahadur</option>
+                <option value="Chauhan Tejashkumar Revadas">Chauhan Tejashkumar Revadas</option>
+                <option value="Chetan Tadvi">Chetan Tadvi</option>
+                <option value="Dinbandhu Tadvi">Dinbandhu Tadvi</option>
+                <option value="Kanchan Vasava">Kanchan Vasava</option>
+            </select>
+        </div>
 
-            <button class="w-full mt-5 p-3 bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-lg font-medium transition-transform hover:scale-105" onclick="saveData()">💾 Save Changes</button>
-            
-            <div class="flex justify-between mt-3">
-                <button class="w-1/2 mr-2 p-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-transform hover:scale-105" onclick="prevRecord()">⬅️ Back</button>
-                <button class="w-1/2 ml-2 p-3 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-transform hover:scale-105" onclick="nextRecord()">➡️ Forward</button>
-            </div>
+        <div class="form-group">
+            <label for="formDate">📅 Form Date</label>
+            <input type="date" id="formDate">
+        </div>
+
+        <div class="form-group">
+            <label for="name">📝 Beneficiary Name</label>
+            <input type="text" id="name">
+        </div>
+
+        <div class="form-group">
+            <label for="dob">🎂 Date of Birth</label>
+            <input type="text" id="dob">
+        </div>
+
+        <div class="form-group">
+            <label for="gender">🚻 Gender</label>
+            <input type="text" id="gender">
+        </div>
+
+        <div class="form-group">
+            <label for="area">📍 Area</label>
+            <input type="text" id="area">
+        </div>
+
+        <div class="form-group">
+            <label for="phone">📞 Phone Number</label>
+            <input type="text" id="phone">
+        </div>
+
+        <button onclick="saveData()">💾 Save Changes</button>
+
+        <div class="nav-buttons">
+            <button onclick="prevRecord()">⬅️ Back</button>
+            <button onclick="nextRecord()">➡️ Forward</button>
         </div>
     </div>
 
@@ -74,20 +66,15 @@
         function saveData() {
             alert("✅ Changes saved successfully!");
         }
-
         function prevRecord() {
             alert("🔙 Going to the previous record...");
         }
-
         function nextRecord() {
             alert("🔜 Going to the next record...");
         }
-
-        // Dark Mode Toggle
-        const toggle = document.getElementById("darkModeToggle");
-        toggle.addEventListener("click", () => {
-            document.body.classList.toggle("dark");
-        });
     </script>
 </body>
 </html>
+                   
+
+    
